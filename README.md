@@ -1,3 +1,12 @@
+Built with Ionic and NodeJS
+
+See Scott Morrison's project report for installation instructions and for overview of code.
+
+----
+
+Ionic ReadMe
+
+
 Building and Running the Ionic Application
 Prerequisites
 Install NodeJS and npm (npm comes with NodeJS install):
