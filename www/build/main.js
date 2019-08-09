@@ -430,12 +430,18 @@ var RegisterPage = /** @class */ (function () {
         this.loadingCtrl = loadingCtrl;
         this.createSuccess = false;
         this.registerCredentials = { forename: '', surname: '', dob: '', email: '', password: '' };
+        this.mylog("Constructor");
     }
+    RegisterPage.prototype.mylog = function (s) {
+        console.log("   >>>>>  RegisterPage: " + s + "  <<<<<   "); //comment out to turn off debug logging
+    };
     RegisterPage.prototype.ionViewDidLoad = function () {
+        this.mylog("ionViewDidLoad");
         console.log('ionViewDidLoad RegisterPage');
     };
     RegisterPage.prototype.register = function () {
         var _this = this;
+        this.mylog("register");
         this.showLoading();
         this.registerCredentials.dob = __WEBPACK_IMPORTED_MODULE_3_moment__["utc"](this.registerCredentials.dob).format("YYYY-MM-DD");
         this.auth.register(this.registerCredentials).subscribe(function (success) {
@@ -451,6 +457,7 @@ var RegisterPage = /** @class */ (function () {
         });
     };
     RegisterPage.prototype.showLoading = function () {
+        this.mylog("showLoading");
         this.loading = this.loadingCtrl.create({
             content: 'Registering your account...',
             dismissOnPageChange: true
@@ -459,6 +466,7 @@ var RegisterPage = /** @class */ (function () {
     };
     RegisterPage.prototype.showPopup = function (title, text) {
         var _this = this;
+        this.mylog("showPopup");
         this.loading.dismiss();
         var alert = this.alertCtrl.create({
             title: title,
@@ -2009,11 +2017,16 @@ var LoginPage = /** @class */ (function () {
         this.alertCtrl = alertCtrl;
         this.loadingCtrl = loadingCtrl;
         this.loginCredentials = { email: '', password: '' };
+        this.mylog("constructor");
         this.menu.enable(false, 'sideMenu');
     }
     LoginPage_1 = LoginPage;
+    LoginPage.prototype.mylog = function (s) {
+        console.log("   >>>>>  LoginPage: " + s + "  <<<<<   "); //comment out to turn off debug logging
+    };
     LoginPage.prototype.ionViewDidLoad = function () {
         var _this = this;
+        this.mylog("ionViewDidLoad");
         if (localStorage.getItem("token")) {
             this.showLoading();
             this.auth.checkLoggedIn({ email: localStorage.getItem("email"), token: localStorage.getItem("token") }).subscribe(function (allowed) {
@@ -2031,6 +2044,7 @@ var LoginPage = /** @class */ (function () {
     };
     LoginPage.prototype.login = function () {
         var _this = this;
+        this.mylog("login");
         this.showLoading();
         this.auth.login(this.loginCredentials).subscribe(function (allowed) {
             if (allowed) {
@@ -2047,12 +2061,15 @@ var LoginPage = /** @class */ (function () {
         });
     };
     LoginPage.prototype.createAccount = function () {
+        this.mylog("createAccount");
         this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_3__register_register__["a" /* RegisterPage */]);
     };
     LoginPage.prototype.resetPassword = function () {
+        this.mylog("resetPassword");
         this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_5__reset_reset__["a" /* ResetPage */]);
     };
     LoginPage.prototype.showLoading = function () {
+        this.mylog("showLoading");
         this.loading = this.loadingCtrl.create({
             content: 'Logging you in...',
             dismissOnPageChange: true
@@ -2060,6 +2077,7 @@ var LoginPage = /** @class */ (function () {
         this.loading.present();
     };
     LoginPage.prototype.showError = function (text) {
+        this.mylog("showError");
         this.loading.dismiss();
         var alert = this.alertCtrl.create({
             subTitle: text,

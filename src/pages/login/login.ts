@@ -20,6 +20,10 @@ import {TabsPage} from "../tabs/tabs";
 })
 export class LoginPage {
 
+  private mylog(s){
+    console.log("   >>>>>  LoginPage: "+s+"  <<<<<   ");//comment out to turn off debug logging
+  }
+
   loading: Loading;
   message: any;
   loginCredentials = { email: '', password: '' };
@@ -27,11 +31,15 @@ export class LoginPage {
   constructor(public navCtrl: NavController, public navParams: NavParams, public http: Http,
               public menu: MenuController, private auth: AuthService, private alertCtrl: AlertController,
               private loadingCtrl: LoadingController) {
-    this.menu.enable(false, 'sideMenu');
+
+      this.mylog("constructor");
+      this.menu.enable(false, 'sideMenu');
   }
 
   ionViewDidLoad() {
-    if(localStorage.getItem("token")) {
+      this.mylog("ionViewDidLoad")
+
+      if(localStorage.getItem("token")) {
       this.showLoading();
       this.auth.checkLoggedIn({email: localStorage.getItem("email"), token: localStorage.getItem("token")}).subscribe(allowed => {
           if (allowed) {
@@ -48,46 +56,51 @@ export class LoginPage {
   }
 
   login() {
-    this.showLoading();
-    this.auth.login(this.loginCredentials).subscribe(allowed => {
-        if (allowed) {
-          this.navCtrl.setRoot(TabsPage);
-          this.menu.enable(true,'sideMenu');
-        } else {
-          this.showError(this.auth.getMessage());
-          this.loginCredentials.email = '';
-          this.loginCredentials.password = '';
-        }
-      },
-      error => {
-        this.showError(error);
-      });
+      this.mylog("login")
+      this.showLoading();
+      this.auth.login(this.loginCredentials).subscribe(allowed => {
+          if (allowed) {
+            this.navCtrl.setRoot(TabsPage);
+            this.menu.enable(true,'sideMenu');
+          } else {
+            this.showError(this.auth.getMessage());
+            this.loginCredentials.email = '';
+            this.loginCredentials.password = '';
+          }
+        },
+        error => {
+          this.showError(error);
+        });
   }
 
   public createAccount() {
-    this.navCtrl.push(RegisterPage);
+      this.mylog("createAccount")
+      this.navCtrl.push(RegisterPage);
   }
 
 
   public resetPassword() {
-    this.navCtrl.push(ResetPage);
+      this.mylog("resetPassword")
+      this.navCtrl.push(ResetPage);
   }
 
   showLoading() {
-    this.loading = this.loadingCtrl.create({
-      content: 'Logging you in...',
-      dismissOnPageChange: true
-    });
-    this.loading.present();
+      this.mylog("showLoading")
+      this.loading = this.loadingCtrl.create({
+        content: 'Logging you in...',
+        dismissOnPageChange: true
+      });
+      this.loading.present();
   }
 
   showError(text) {
-    this.loading.dismiss();
-    let alert = this.alertCtrl.create({
-      subTitle: text,
-      buttons: ['OK']
-    });
-    alert.present();
+      this.mylog("showError")
+      this.loading.dismiss();
+      let alert = this.alertCtrl.create({
+        subTitle: text,
+        buttons: ['OK']
+      });
+      alert.present();
   }
 
 }
