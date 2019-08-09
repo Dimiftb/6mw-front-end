@@ -1,0 +1,82 @@
+{
+  "_args": [
+    [
+      {
+        "raw": "cordova-plugin-stepcounter",
+        "scope": null,
+        "escapedName": "cordova-plugin-stepcounter",
+        "name": "cordova-plugin-stepcounter",
+        "rawSpec": "",
+        "spec": "latest",
+        "type": "tag"
+      },
+      "C:\\Users\\Scott\\Documents\\6mwtest\\node_modules"
+    ]
+  ],
+  "_from": "cordova-plugin-stepcounter@latest",
+  "_id": "cordova-plugin-stepcounter@1.0.1",
+  "_inCache": true,
+  "_location": "/cordova-plugin-stepcounter",
+  "_nodeVersion": "7.4.0",
+  "_npmOperationalInternal": {
+    "host": "packages-12-west.internal.npmjs.com",
+    "tmp": "tmp/cordova-plugin-stepcounter-1.0.1.tgz_1495042192324_0.9899675487540662"
+  },
+  "_npmUser": {
+    "name": "ihadeed",
+    "email": "i.hadeed@zyra.ca"
+  },
+  "_npmVersion": "4.0.5",
+  "_phantomChildren": {},
+  "_requested": {
+    "raw": "cordova-plugin-stepcounter",
+    "scope": null,
+    "escapedName": "cordova-plugin-stepcounter",
+    "name": "cordova-plugin-stepcounter",
+    "rawSpec": "",
+    "spec": "latest",
+    "type": "tag"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/cordova-plugin-stepcounter/-/cordova-plugin-stepcounter-1.0.1.tgz",
+  "_shasum": "28d6d8279c37240e733b41e703bb58bf7a20bcc9",
+  "_shrinkwrap": null,
+  "_spec": "cordova-plugin-stepcounter",
+  "_where": "C:\\Users\\Scott\\Documents\\6mwtest\\node_modules",
+  "author": "",
+  "bugs": {
+    "url": "https://github.com/ihadeed/cordova-plugin-stepcounter/issues"
+  },
+  "dependencies": {},
+  "description": "Uses the step counter service APIs introduced in Android 4.4 KitKat to, you guessed it, count the number of steps whomever is holding the device running your app takes.",
+  "devDependencies": {},
+  "directories": {},
+  "dist": {
+    "shasum": "28d6d8279c37240e733b41e703bb58bf7a20bcc9",
+    "tarball": "https://registry.npmjs.org/cordova-plugin-stepcounter/-/cordova-plugin-stepcounter-1.0.1.tgz"
+  },
+  "gitHead": "f29b63f54b004542016350437dab52768c8657ea",
+  "homepage": "https://github.com/ihadeed/cordova-plugin-stepcounter#readme",
+  "license": "ISC",
+  "main": "index.js",
+  "maintainers": [
+    {
+      "name": "ihadeed",
+      "email": "i.hadeed@zyra.ca"
+    }
+  ],
+  "name": "cordova-plugin-stepcounter",
+  "optionalDependencies": {},
+  "readme": "ERROR: No README data found!",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ihadeed/cordova-plugin-stepcounter.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "version": "1.0.1"
+}

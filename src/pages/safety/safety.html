@@ -1,0 +1,42 @@
+<!--
+  Generated template for the SafetyPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar>
+    <img src="assets/imgs/header.png" height="44" style="padding-left:2%"/>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <h2>Safety</h2>
+  <ul>
+    <li>Please ensure that you are wearing comfortable and appropriate clothing and footwear before carrying out a test.</li>
+    <li>If at any point you feel like you need a break then please stop and rest. The timer will continue to count down
+    unless you explicitly stop the test, allowing you to continue at any time.</li>
+    <li>If you feel any shortness of breath, dizziness, or any other symptoms out of the ordinary, or you feel like
+      you can't continue the test for any other reason then please stop the test immediately and seek medical advice if necessary.</li>
+    <li>It is at the user's discretion where they carry out a test, but ideally the test should be carried out on flat ground. please be aware when crossing roads, walkways, and paths.
+    Ideally you should carry out a test in a clear, traffic free area as per the instructions below.</li>
+  </ul>
+  <hr/>
+  <h2>Instructions</h2>
+  <ul>
+    <li>On pressing the 'Start Test' button the test will start immediately.</li>
+    <li>If you have never carried out a test before then the app will first show you this safety and instructions dialogue. On closing
+    the dialogue, simply click 'Start Test' again to begin.</li>
+    <li>The app will calculate your distance by tracking your GPS location so please carry out the test in a clear, open and traffic free environment with your location services
+      turned on, high accuracy enabled, and please ensure the app has location permissions.</li>
+    <li>You should walk for the duration of the 6 minutes, taking any breaks as required. A result will only be recorded if you complete the full
+      6 minutes without stopping the test.</li>
+    <li>The test can be stopped at any time by clicking the 'Stop Test' button, followed by the 'Confirm' button in the corresponding popup.</li>
+    <li>The timer will continue to countdown until you click the 'Confirm' button on the aforementioned popup.</li>
+    <li>On completion of a full 6 minutes, you will be shown your results along side some comparisons of your previous results and how your latest result
+      compares with people of a similar age.</li>
+    <li>You can view all your previous results at any time in the 'Log' section of the app.</li>
+  </ul>
+  <hr/>
+  <button ion-button block (click)="dismiss()">OK, I understand</button>
+</ion-content>

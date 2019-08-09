@@ -1,0 +1,52 @@
+<!--
+  Generated template for the ResultsPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar>
+    <img src="assets/imgs/header.png" height="44" style="padding-left:2%"/>
+    <ion-buttons end>
+      <ion-label stacked>Logout</ion-label>
+      <button ion-button icon-only (click)="logout()"><ion-icon name="log-out"></ion-icon></button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <h4 class="non-center">
+    Last 10 Results
+  </h4>
+  <div class="results-graph" *ngIf="hasPreviousResults">
+    <canvas #resultsGraph></canvas>
+  </div>
+  <p *ngIf="!hasPreviousResults">No previous results found.</p>
+  <div padding *ngIf="hasPreviousResults">
+    <hr/>
+    <div padding>
+      <h4 text-center>Best Distance Travelled</h4>
+      <h4 text-center class="best-distance">{{bestDistance || 0}} metres</h4>
+    </div>
+    <hr/>
+    <div padding>
+      <h4 text-center>Worst Distance Travelled</h4>
+      <h4 text-center class="worst-distance">{{worstDistance || 0}} metres</h4>
+    </div>
+    <hr/>
+  </div>
+  <h4 class="non-center">
+    All Previous Results
+  </h4>
+  <div>
+    <ion-list>
+        <button ion-item *ngFor="let result of previousResults" no-lines style="border-top:1px solid rgba(129,129,129,0.39);" (click)="showPreviousResult(result)">
+          {{ result.formatDate.substr(0,11) + ' - ' + result.formatDate.substr(11,9) }}
+          <br/>
+          <span class="address-text">{{result.street || 'Unknown'}}, {{result.city || 'Unknown'}}</span>
+          <ion-icon name="arrow-forward" item-end></ion-icon>
+        </button>
+    </ion-list>
+  </div>
+  <p *ngIf="!hasPreviousResults">No previous results found.</p>
+</ion-content>

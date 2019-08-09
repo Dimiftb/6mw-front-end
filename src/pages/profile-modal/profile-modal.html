@@ -1,0 +1,19 @@
+<!--
+  Generated template for the ProfileModalPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-content class="profile-modal">
+  <ion-item no-lines>
+    <h1 ion-text style="font-size:large">{{type}}</h1>
+    <ion-icon name="close" item-right small (click)="dismiss(pickedNumber)"></ion-icon>
+  </ion-item>
+  <hr/>
+  <ion-list radio-group [virtualScroll]="numbers" [(ngModel)]="pickedNumber" approxItemHeight="20px">
+    <ion-item *virtualItem="let number" no-lines>
+      <ion-label>{{number}}</ion-label>
+      <ion-radio item-left [value]="number" (ionSelect)="dismiss(pickedNumber)"></ion-radio>
+    </ion-item>
+  </ion-list>
+</ion-content>

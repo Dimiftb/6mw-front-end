@@ -1,0 +1,17 @@
+page-previous-result {
+  .avg-icon {
+    font-size: 50px;
+  }
+
+  .avg-icon.below {
+    color: color($colors, danger, base);
+  }
+
+  .avg-icon.above {
+    color: color($colors, secondary, base);
+  }
+
+  .avg-icon.on {
+    color: #ff6700;
+  }
+}

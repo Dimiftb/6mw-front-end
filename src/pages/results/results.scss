@@ -1,0 +1,27 @@
+page-results {
+  .results-graph {
+    padding-top:2%;
+    padding-right:2%;
+    padding-bottom:2%
+  }
+
+  h4.non-center {
+    padding-left: 2%;
+  }
+
+  h4.worst-distance {
+    color: color($colors, danger, base);
+  }
+
+  h4.best-distance {
+    color: color($colors, secondary, base);
+  }
+
+  p {
+    padding-left: 2%;
+  }
+
+  .address-text {
+    font-size:smaller;
+  }
+}

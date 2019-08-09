@@ -1,0 +1,38 @@
+<!--
+  Generated template for the WalkTestPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar>
+    <img src="assets/imgs/header.png" height="44" style="padding-left:2%"/>
+    <ion-buttons end>
+      <ion-label stacked>Logout</ion-label>
+      <button ion-button icon-only (click)="logout()"><ion-icon name="log-out"></ion-icon></button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+  <ion-row>
+    <ion-col>
+      <div class="timer-circle">
+        <p class="timer-text" ion-text text-center>{{countDown | async | timer}}</p>
+      </div>
+    </ion-col>
+  </ion-row>
+  <ion-row class="button-row">
+    <ion-col text-center>
+      <button ion-button block (click)="initiateTest()" *ngIf="!timerStarted">Start Timer</button>
+      <button ion-button block (click)="initiatieStopTest()" *ngIf="timerStarted">Stop Timer</button>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col>
+      <p text-center class="instruction-text" (click)="showSafetyAndInstructionsModal()">Safety & Instructions</p>
+    </ion-col>
+  </ion-row>
+
+</ion-content>

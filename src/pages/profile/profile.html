@@ -1,0 +1,141 @@
+<!--
+  Generated template for the ProfilePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar>
+    <img src="assets/imgs/header.png" height="44" style="padding-left:2%"/>
+    <ion-buttons end>
+      <ion-label stacked>Logout</ion-label>
+      <button ion-button icon-only (click)="logout()"><ion-icon name="log-out"></ion-icon></button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+  <ion-spinner *ngIf="!saveComplete" float-right></ion-spinner>
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <ion-item>
+          <ion-label stacked>Forename:</ion-label>
+          <ion-input type="text" [(ngModel)]="currentUser.forename" name="forename" (ionChange)="saveChangedValue(currentUser.forename, 'forename');"></ion-input>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col>
+        <ion-item>
+          <ion-label stacked>Surname:</ion-label>
+          <ion-input type="text" [(ngModel)]="currentUser.surname" name="surname" (ionChange)="saveChangedValue(currentUser.surname, 'surname');"></ion-input>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col>
+        <ion-item>
+          <ion-label stacked>DOB:</ion-label>
+          <ion-datetime displayFormat="DD/MM/YYYY"  [(ngModel)]="currentUser.dob" (ionChange)="saveChangedValue(currentUser.dob, 'dob')"></ion-datetime>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col>
+        <ion-item no-lines>
+          <ion-label fixed>Height:</ion-label>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col col-4 *ngIf="currentUser.height_unit == 'F'">
+        <ion-item>
+          <ion-label stacked>ft</ion-label>
+          <ion-input type="text" readonly [(ngModel)]="currentUserFt" (focus)="showInputModal(ftArray, 'Ft', currentUserFt)"></ion-input>
+        </ion-item>
+      </ion-col>
+      <ion-col col-4 *ngIf="currentUser.height_unit == 'F'">
+        <ion-item>
+          <ion-label stacked>in</ion-label>
+          <ion-input type="text" readonly [(ngModel)]="currentUserIn" (focus)="showInputModal(inArray, 'Inches', currentUserIn)"></ion-input>
+        </ion-item>
+      </ion-col>
+
+      <ion-col col-8 *ngIf="currentUser.height_unit == 'C'">
+        <ion-item>
+          <ion-label stacked>cm</ion-label>
+          <ion-input type="text" readonly [(ngModel)]="currentUser.height" (focus)="showInputModal(cmArray, 'Cm', currentUser.height)"></ion-input>
+        </ion-item>
+      </ion-col>
+
+      <ion-col col-4>
+        <ion-item>
+          <ion-label stacked>Units:</ion-label>
+          <ion-select [(ngModel)]="currentUser.height_unit" interface="action-sheet" (ionChange)="saveChangedValue(currentUser.height_unit, 'height_unit');">
+            <ion-option value="F">Feet</ion-option>
+            <ion-option value="C">Cm</ion-option>
+          </ion-select>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col>
+        <ion-item no-lines>
+          <ion-label fixed>Weight:</ion-label>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col col-4 *ngIf="currentUser.weight_unit == 'S'">
+        <ion-item>
+          <ion-label stacked>st</ion-label>
+          <ion-input type="text" readonly [(ngModel)]="currentUserSt" (focus)="showInputModal(stArray, 'Stone', currentUserSt)"></ion-input>
+        </ion-item>
+      </ion-col>
+
+      <ion-col col-4 *ngIf="currentUser.weight_unit == 'S'">
+        <ion-item>
+          <ion-label stacked>lbs</ion-label>
+          <ion-input type="text" readonly [(ngModel)]="currentUserLbs" (focus)="showInputModal(lbsArray, 'Lbs', currentUserLbs)"></ion-input>
+        </ion-item>
+      </ion-col>
+
+      <ion-col col-8 *ngIf="currentUser.weight_unit == 'K'">
+        <ion-item>
+          <ion-label stacked>Kgs</ion-label>
+          <ion-input type="text" readonly [(ngModel)]="currentUser.weight" (focus)="showInputModal(kgArray, 'Kgs', currentUser.weight)"></ion-input>
+        </ion-item>
+      </ion-col>
+
+      <ion-col col-4>
+        <ion-item>
+          <ion-label stacked>Units:</ion-label>
+          <ion-select [(ngModel)]="currentUser.weight_unit" interface="action-sheet" (ionChange)="saveChangedValue(currentUser.weight_unit, 'weight_unit');">
+            <ion-option value="S">Stone</ion-option>
+            <ion-option value="K">Kg</ion-option>
+          </ion-select>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col>
+        <ion-item>
+          <ion-label stacked>Gender:</ion-label>
+          <ion-select [(ngModel)]="currentUser.gender" interface="action-sheet" (ionChange)="saveChangedValue(currentUser.gender, 'gender');">
+            <ion-option value="F">Female</ion-option>
+            <ion-option value="M">Male</ion-option>
+          </ion-select>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

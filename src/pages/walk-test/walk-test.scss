@@ -1,0 +1,25 @@
+page-walk-test {
+  .timer-text {
+    font-size: 7em;
+    color: rgba(247, 172, 79, 0.92);
+  }
+
+  .timer-circle {
+    border:5px solid rgba(72,138,255,0.73);
+    border-radius: 50%;
+    margin-top:8%;
+  }
+
+  .col .instruction-text {
+    font-size: 0.9em;
+    margin-top: 2%;
+    text-decoration: underline;
+    color: rgba(60, 60, 60, 0.7);
+
+  }
+
+  .button-row button {
+    margin-top:12%;
+  }
+
+}

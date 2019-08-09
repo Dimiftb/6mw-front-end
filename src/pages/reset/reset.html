@@ -1,0 +1,52 @@
+<!--
+  Generated template for the LoginPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Back</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content class="login-content" padding>
+  <ion-row class="logo-row">
+    <ion-col></ion-col>
+    <ion-col width-67>
+      <img src="assets/imgs/icon.png"/>
+    </ion-col>
+    <ion-col></ion-col>
+  </ion-row>
+  <div class="login-box">
+    <form (ngSubmit)="reset()" #resetForm="ngForm">
+      <ion-row>
+        <ion-col>
+          <ion-list inset>
+            <ion-item>
+              <ion-label stacked>Email</ion-label>
+              <ion-input type="email" name="email" [(ngModel)]="resetCredentials.email" required></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-label stacked>Password</ion-label>
+              <ion-input type="password" name="password" [(ngModel)]="resetCredentials.password" required></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-label stacked>Confirm Password</ion-label>
+              <ion-input type="password" name="password" [(ngModel)]="resetCredentials.confirmPassword" required></ion-input>
+            </ion-item>
+          </ion-list>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col class="signup-col">
+          <button ion-button class="submit-btn" full [disabled]="!resetForm.form.valid">Reset password</button>
+        </ion-col>
+      </ion-row>
+
+    </form>
+  </div>
+</ion-content>
